@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>จองคิวร้านทำเล็บ</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial;
+background:#e9e3f3;
+}
+
+.container{
+display:flex;
+height:100vh;
+}
+
+/* ฝั่งซ้าย */
+.left{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#dcd2e8;
+}
+
+.left img{
+width:300px;
+border-radius:50%;
+}
+
+/* ฝั่งขวา */
+.right{
+flex:1;
+background:#f5f5f5;
+padding:40px;
+}
+
+.header{
+background:linear-gradient(90deg,#7b3fe4,#b784ff);
+color:white;
+padding:20px;
+text-align:center;
+font-size:24px;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:14px;
+background:linear-gradient(90deg,#b784ff,#a66cff);
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ซ้าย -->
+<div class="left">
+<img src="logo.png">
+</div>
+
+<!-- ขวา -->
+<div class="right">
+
+<div class="header">
+ข้อมูลการจองคิว
+</div>
+
+<input type="text" placeholder="ชื่อการจอง">
+<input type="text" placeholder="เบอร์โทร">
+
+<input type="datetime-local">
+
+<select>
+<option>เลือกรายการ</option>
+<option>ทาสีเจล</option>
+<option>ต่อเล็บ</option>
+<option>เพ้นท์เล็บ</option>
+</select>
+
+<input type="file">
+<input type="file">
+
+<button>จองคิว</button>
+...
+</div>  <!-- ปิด bookingPage -->
+
+<script>
+
+function showLogin(){
+document.getElementById("loginBox").classList.remove("hidden");
+document.getElementById("registerBox").classList.add("hidden");
+}
+
+function showRegister(){
+document.getElementById("registerBox").classList.remove("hidden");
+document.getElementById("loginBox").classList.add("hidden");
+}
+
+function goBooking(){
+document.getElementById("loginPage").style.display="none";
+document.getElementById("bookingPage").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
+</div>
+
+</div>
+
+</body>
+</html>

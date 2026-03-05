@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ระบบจองคิวทำเล็บ</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#eee;
+}
+
+/* layout */
+
+.container{
+display:flex;
+height:100vh;
+}
+
+/* ซ้าย */
+
+.left{
+flex:1;
+background:linear-gradient(180deg,#6c2bd9,#9c6bff);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:30px;
+}
+
+/* ขวา */
+
+.right{
+flex:1;
+background:#f5f5f5;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* กล่องฟอร์ม */
+
+.box{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+/* input */
+
+input,select{
+width:250px;
+padding:12px;
+margin:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+/* ปุ่ม */
+
+button{
+width:270px;
+padding:12px;
+background:#9c6bff;
+border:none;
+border-radius:8px;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* ลิ้ง */
+
+.link{
+color:#6c2bd9;
+cursor:pointer;
+}
+
+/* ซ่อน */
+
+.hidden{
+display:none;
+}
+
+/* หน้า booking */
+
+.booking{
+display:none;
+padding:50px;
+}
+
+.title{
+background:linear-gradient(90deg,#6c2bd9,#9c6bff);
+color:white;
+padding:15px;
+border-radius:10px;
+text-align:center;
+margin-bottom:20px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- หน้า LOGIN -->
+
+<div id="loginPage" class="container">
+
+<div class="left">
+ระบบจองคิวทำเล็บ
+</div>
+
+<div class="right">
+
+<div class="box">
+
+<!-- LOGIN -->
+
+<div id="loginBox">
+
+<h2>เข้าสู่ระบบ</h2>
+
+<input type="text" placeholder="ชื่อผู้ใช้"><br>
+
+<input type="password" placeholder="รหัสผ่าน"><br>
+
+<button onclick="goBooking()">เข้าสู่ระบบ</button>
+
+<p class="link" onclick="showRegister()">สมัครสมาชิก</p>
+
+</div>
+
+
+<!-- REGISTER -->
+
+<div id="registerBox" class="hidden">
+
+<h2>สร้างบัญชีใหม่</h2>
+
+<input type="text" placeholder="ชื่อ"><br>
+
+<input type="password" placeholder="รหัสผ่าน"><br>
+
+<input type="date"><br>
+
+<button onclick="showLogin()">ลงทะเบียน</button>
+
+<p class="link" onclick="showLogin()">กลับไปเข้าสู่ระบบ</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- หน้า BOOKING -->
+
+<div id="bookingPage" class="booking">
+
+<div class="title">
+ข้อมูลการจองคิว
+</div>
+
+<center>
+
+<input type="text" placeholder="ชื่อการจอง"><br>
+
+<input type="text" placeholder="เบอร์โทร"><br>
+
+<input type="datetime-local"><br>
+
+<select>
+<option>เลือกรายการ</option>
+<option>ทาสีเล็บ</option>
+<option>ต่อเล็บ</option>
+<option>เพ้นท์เล็บ</option>
+</select><br>
+
+<input type="file"><br>
+
+<input type="file"><br>
+
+<button>จองคิว</button>
+
+</center>
+
+</div>
+
+
+
+<script>
+
+/* สลับ login */
+
+function showLogin(){
+document.getElementById("loginBox").classList.remove("hidden");
+document.getElementById("registerBox").classList.add("hidden");
+}
+
+/* สลับ register */
+
+function showRegister(){
+document.getElementById("registerBox").classList.remove("hidden");
+document.getElementById("loginBox").classList.add("hidden");
+}
+
+/* ไปหน้าจองคิว */
+
+function goBooking(){
+document.getElementById("loginPage").style.display="none";
+document.getElementById("bookingPage").style.display="block";
+}
+
+</script>
+
+
+</body>
+</html>
